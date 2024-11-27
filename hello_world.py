@@ -23,13 +23,13 @@ def hello_goodbye_flow(name: str):
 #         tags=["Demo"],
 #         parameters={"name": "Jitendra"},
 #         interval=60
-    )
+    # )
 
 if __name__ == "__main__":
     flow.from_source(
         source="https://github.com/your-repo/your-project.git",
-        entrypoint="flow.py:your_flow",
+        entrypoint="hello_world.py:hello_goodbye_flow",
     ).deploy(
-        name="your-flow-deployment",
-        work_pool_name="my-work-pool",
+        name="test-flow-deployment",
+        work_pool_name="my-test-work-pool",
     )
