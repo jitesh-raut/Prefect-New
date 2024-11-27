@@ -27,7 +27,7 @@ def hello_goodbye_flow(name: str):
 
 if __name__ == "__main__":
     flow.from_source(
-        source="https://github.com/your-repo/your-project.git",
+        source="https://github.com/jitesh-raut/Prefect-New.git",
         entrypoint="hello_world.py:hello_goodbye_flow",
     ).deploy(
         name="test-flow-deployment",
