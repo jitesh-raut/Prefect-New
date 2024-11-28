@@ -19,5 +19,5 @@ if __name__ == "__main__":
         entrypoint="repo_info.py:get_repo_info"
     ).deploy(
         name="my-deployment_v3", 
-        work_pool_name="my-test-work-pool", 
+        work_pool_name="my-managed-pool", 
     )
