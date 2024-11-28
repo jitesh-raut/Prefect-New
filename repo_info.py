@@ -4,7 +4,7 @@ from prefect import flow
 
 @flow(log_prints=True)
 def get_repo_info(repo_name: str = "Prefect-New"):
-    url = f"https://api.github.com/repos/{repo_name}"
+    url = "https://github.com/jitesh-raut/Prefect-New"
     response = httpx.get(url)
     response.raise_for_status()
     repo = response.json()
