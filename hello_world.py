@@ -23,13 +23,26 @@ def hello_goodbye_flow(name: str):
 #         tags=["Demo"],
 #         parameters={"name": "Jitendra"},
 #         interval=60
-    # )
+# )
 
 if __name__ == "__main__":
-    flow.from_source(
+    hello_goodbye_flow.from_source(
         source="https://github.com/jitesh-raut/Prefect-New.git",
         entrypoint="hello_world.py:hello_goodbye_flow",
-    ).deploy(
-        name="test-flow-deployment",
+        ).deploy(
+        name="Test Deployment v2", # Name of deployment
         work_pool_name="my-test-work-pool",
+        image="prefecthq/prefect:3-python3.12.7",
+        tags=["Test"],
+        parameters={"name": "John Doe"}, # Parameters to pass into floM
+        interval=60, # Run interval in seconds (Every 60 seconds)
     )
+
+# if __name__ == "__main__":
+#     flow.from_source(
+#         source="https://github.com/jitesh-raut/Prefect-New.git",
+#         entrypoint="hello_world.py:hello_goodbye_flow",
+#     ).deploy(
+#         name="test-flow-deployment",
+#         work_pool_name="my-test-work-pool",
+#     )
