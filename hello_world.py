@@ -35,7 +35,7 @@ if __name__ == "__main__":
         image="prefecthq/prefect:3-python3.12.7",
         tags=["Test"],
         parameters={"name": "John Doe"}, # Parameters to pass into floM
-        interval=60, # Run interval in seconds (Every 60 seconds)
+        interval=600, # Run interval in seconds (Every 60 seconds)
     )
 
 # if __name__ == "__main__":
