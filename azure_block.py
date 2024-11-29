@@ -1,13 +1,8 @@
 from prefect import flow
 from prefect_azure import AzureBlobCredentials, AzureBlobStorage
-from prefect_azure.blob_storage import AzureBlobStorageContainer
-
 
 if __name__ == "__main__":
 
-    #azure_blob_storage_container_block = AzureBlobStorageContainer.load("my-code-storage-block")
-
-    # or 
     azure_blob_storage_block = AzureBlobStorage(   
         container="codestorage",
         folder="prefect",
