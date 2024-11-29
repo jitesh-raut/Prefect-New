@@ -1,5 +1,5 @@
 from prefect import flow
-from prefect_azure import AzureBlobCredentials, AzureBlobStorage
+from prefect_azure.blob_storage import AzureBlobStorage, AzureBlobStorageCredentials
 
 if __name__ == "__main__":
 
