@@ -1,23 +1,15 @@
 from prefect import flow
-from prefect.runner.storage import GitRepository
-from prefect_github import GitHubCredentials
 
+# Source for the code to deploy (here, a GitHub repo)
+SOURCE_REPO="https://github.com/jitesh-raut/Prefect-New.git"
 
 if __name__ == "__main__":
-
-    github_repo = GitRepository(
-        url="https://github.com/jitesh-raut/Prefect-New.git",
-        credentials=GitHubCredentials.load("git-credentials-blocks"),
-    )
-
     flow.from_source(
-        source=github_repo,
-        entrypoint="hello_world.py:hello_goodbye_flow",
+        source=SOURCE_REPO,
+        entrypoint="hello_world.py:hello_goodbye_flow", # Specific flow to run
     ).deploy(
-        name="Test Deployment v2", # Name of deployment
-        work_pool_name="my-test-work-pool",
-        image="prefecthq/prefect:3-python3.12.7",
-        tags=["Test"],
-        parameters={"name": "John Doe"}, # Parameters to pass into floM
-        interval=600, # Run interval in seconds (Every 60 seconds)
+        name="my-first-deployment",
+        work_pool_name="my-managed-pool", # Work pool target
+        cron="* * * * *", # Cron schedule (every minute)
     )
+
