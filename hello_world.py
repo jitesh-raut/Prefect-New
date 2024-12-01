@@ -24,7 +24,7 @@ if __name__ == "__main__":
         entrypoint="hello_world.py:hello_goodbye_flow",
         ).deploy(
         name="Test Deployment v2", # Name of deployment
-        work_pool_name="my-test-work-pool",
+        work_pool_name="my-managed-pool",
         image="prefecthq/prefect:3-python3.12.7",
         tags=["Test"],
         parameters={"name": "John Doe"}, # Parameters to pass into floM
