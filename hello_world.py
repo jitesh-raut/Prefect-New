@@ -17,13 +17,6 @@ def hello_goodbye_flow(name: str):
     say_goodbye(name)
 
 # Deploy the flow
-# if __name__ == "__main__":
-#     hello_goodbye_flow.serve(
-#         name="Demo Deployment",
-#         tags=["Demo"],
-#         parameters={"name": "Jitendra"},
-#         interval=60
-# )
 
 if __name__ == "__main__":
     hello_goodbye_flow.from_source(
@@ -37,12 +30,3 @@ if __name__ == "__main__":
         parameters={"name": "John Doe"}, # Parameters to pass into floM
         interval=600, # Run interval in seconds (Every 60 seconds)
     )
-
-# if __name__ == "__main__":
-#     flow.from_source(
-#         source="https://github.com/jitesh-raut/Prefect-New.git",
-#         entrypoint="hello_world.py:hello_goodbye_flow",
-#     ).deploy(
-#         name="test-flow-deployment",
-#         work_pool_name="my-test-work-pool",
-#     )

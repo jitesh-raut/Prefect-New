@@ -1,9 +1,0 @@
-digraph {
-	"get_list-0"
-	"append_one-0"
-	"get_list-0" -> "append_one-0"
-	"append_one-1"
-	"get_list-0" -> "append_one-1"
-	"append_one-2"
-	"get_list-0" -> "append_one-2"
-}
